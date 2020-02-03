@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result</title>
+</head>
+<body>
+
+    <ul class="w3-ul ">
+    <li style="border-bottom: 0px;"> <h2> <b> Resumes that matched your requirements </b> </h2></li>
+    <br><br>
+
+    {% for file in files %}
+        <li class="w3-border"> <h2><a style="text-decoration: none; color : blue;" href="{{ file.1 }}"> {{ file.0 }} </a> </h2> </li>
+    {% endfor %}
+
+    </ul>
+
+
+</body>
+</html>

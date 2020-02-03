@@ -1,0 +1,73 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body.bgc{
+            background-color: #32465a;
+        }
+        
+        li:hover{
+            background-color: #32465a36;
+        }
+        
+        #form-div{
+            width:500px;
+            height:auto;
+            padding:20px 20px;
+            /* background-color : #e9ecef; */
+            /* border:2px solid #17a2b8; */
+            border-radius:10px;
+        }
+
+        .wrapper{
+            left: 50%;
+            top : 50%;
+            position: absolute;
+            translate: -50% -50%;
+        }
+        
+        .header{
+            position: absolute;
+            left: 50%;
+            top : 15%;
+            translate: -50% -25%;
+            font-size: 3.5rem;
+            color: darkblue;
+        }
+        
+        .asteriskField{
+            display:none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 class="header">Recruitment Assisting System</h1>
+    <!-- <h1 class="header">Best Candiate In a Single Click</h1> -->
+    <div class="conatiner m-auto wrapper" id="form-div">
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Your Best Candiate In a Single Click</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Filter</button>
+                </div>
+            </form>                 
+        </div>
+      </div>
+</body>
+</html>
